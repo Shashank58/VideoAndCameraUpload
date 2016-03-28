@@ -11,6 +11,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="shashank.treusbs.UploadActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <VideoView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/videoUpload"
         android:layout_width="wrap_content"
@@ -43,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         app:elevation="6dp"
-        app:backgroundTint="#1A237E"
+        app:backgroundTint="#3949AB"
         app:pressedTranslationZ="12dp"
         android:layout_margin="10dp"
         android:src="@drawable/ic_add" />

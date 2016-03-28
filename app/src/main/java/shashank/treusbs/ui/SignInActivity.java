@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import shashank.treusbs.R;
+import shashank.treusbs.UploadActivity;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText loginEmail, loginPassword;
@@ -47,6 +48,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void validateInput(){
-
+        Intent intent = new Intent(this, UploadActivity.class);
+        startActivity(intent);
     }
 }

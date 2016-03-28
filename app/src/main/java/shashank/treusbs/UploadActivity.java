@@ -1,6 +1,8 @@
 package shashank.treusbs;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +14,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private FloatingActionButton uploadFab, uploadImageFab, uploadVideoFab;
     private static boolean isFabOpen = false;
     private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+    private static final int PIC_CAPTURED = 0;
+    private static final int REQUEST_VIDEO_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,33 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.upload:
                 animateFAB();
                 break;
+
+            case R.id.cameraUpload:
+                Intent intent = new Intent(android.provider
+                        .MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, PIC_CAPTURED);
+                break;
+
+            case R.id.videoUpload:
+                Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
+                }
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            switch (requestCode){
+                case PIC_CAPTURED:
+                    break;
+
+                case REQUEST_VIDEO_CAPTURE:
+                    break;
+            }
         }
     }
 }
