@@ -1,69 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="shashank.treusbs.UploadActivity">
 
-    <LinearLayout
+    <VideoView
+        android:id="@+id/captured_video"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <ImageView
+        android:id="@+id/play_image"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:src="@android:drawable/ic_media_play"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginStart="140dp"
+        android:padding="20dp"
+        android:visibility="invisible"
+        />
+
+    <EditText
+        android:id="@+id/licence_plate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_below="@id/captured_video"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="15dp"
+        android:hint="@string/licence_hint"
+        android:textAlignment="center"
+        />
 
-        <VideoView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/videoUpload"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/upload_offence"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="10dp"
-        android:visibility="invisible"
-        app:backgroundTint="#0097A7"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp"
-        android:src="@drawable/ic_video" />
+        android:layout_below="@id/licence_plate"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:background="#3949AB"
+        android:text="@string/upload_text"
+        android:textColor="#FFFFFF"
+        />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/cameraUpload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="90dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="10dp"
-        android:visibility="invisible"
-        app:backgroundTint="#3D5AFE"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp"
-        android:src="@drawable/ic_camera" />
+    <View
+        android:id="@+id/black_tint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0.7"
+        android:visibility="gone"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:elevation="6dp"
-        app:backgroundTint="#3949AB"
-        app:pressedTranslationZ="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_margin="10dp"
-        android:src="@drawable/ic_add" />
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#3949AB"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"/>
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/cameraUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/upload"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_camera"
+        android:visibility="invisible"
+        app:backgroundTint="#3D5AFE"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/videoUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cameraUpload"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_video"
+        android:visibility="invisible"
+        app:backgroundTint="#0097A7"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"/>
+
+</RelativeLayout>

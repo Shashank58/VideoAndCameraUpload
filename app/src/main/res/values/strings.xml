@@ -17,4 +17,11 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="need_read_permissions">Please enable read storage permission for image
+        processing to work</string>
+    <string name="need_write_permissions">Please enable write storage permission for image
+        processing to work</string>
+    <string name="licence_hint">Enter vehicle\'s licence number</string>
+    <string name="upload_text">Upload offence</string>
+
 </resources>

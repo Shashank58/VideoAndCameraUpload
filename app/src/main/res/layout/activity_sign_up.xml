@@ -47,6 +47,7 @@
                     android:inputType="text"
                     android:hint="@string/prompt_name"
                     android:textSize="16sp"
+                    android:textColor="#FFFFFF"
                     android:layout_marginTop="50dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -74,6 +75,7 @@
                     android:inputType="textEmailAddress"
                     android:hint="@string/prompt_email"
                     android:textSize="16sp"
+                    android:textColor="#FFFFFF"
                     android:layout_marginTop="50dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -101,6 +103,7 @@
                     android:inputType="phone"
                     android:hint="@string/prompt_number"
                     android:textSize="16sp"
+                    android:textColor="#FFFFFF"
                     android:layout_marginTop="50dp"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -127,6 +130,7 @@
                     android:id="@+id/signUpPassword"
                     android:hint="@string/prompt_password"
                     android:textSize="16sp"
+                    android:textColor="#FFFFFF"
                     android:layout_marginTop="30dp"
                     android:inputType="textPassword"/>
 
@@ -154,6 +158,7 @@
                     android:id="@+id/signUpConfirmPassword"
                     android:hint="@string/prompt_confirm"
                     android:textSize="16sp"
+                    android:textColor="#FFFFFF"
                     android:layout_marginTop="30dp"
                     android:inputType="textPassword"/>
 
