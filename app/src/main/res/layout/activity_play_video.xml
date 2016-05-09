@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PlayVideoActivity"
+    android:background="#000000"
+    >
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/video_loading_loader"
+        style="@style/SpinKitView.Wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

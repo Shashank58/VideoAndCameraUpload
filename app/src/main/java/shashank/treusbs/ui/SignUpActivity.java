@@ -16,9 +16,8 @@ import com.firebase.client.FirebaseError;
 import java.util.Map;
 
 import shashank.treusbs.R;
+import shashank.treusbs.User;
 import shashank.treusbs.util.AppUtils;
-import shashank.treusbs.util.HashPassword;
-import shashank.treusbs.util.SharedPreferenceHandler;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText signUpName, signUpEmail, signUpPassword, signUpConfirmPassword;
@@ -54,19 +53,21 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                    if (nameAndNumberValidation()){
                        if (isValidEmail()){
                            if (checkPassword()){
-                               String email = signUpEmail.getText().toString();
+                               AppUtils.getInstance().showProgressDialog(SignUpActivity.this,
+                                       "Please wait...");
+                               final String email = signUpEmail.getText().toString();
                                String password = signUpPassword.getText().toString();
-                               String hashedPassword = HashPassword.getInstance()
-                                            .computeSHAHash(password);
+
                                myFirebaseRef.createUser(email, password,
                                        new Firebase.ValueResultHandler<Map<String, Object>>() {
                                    @Override
                                    public void onSuccess(Map<String, Object> result) {
-                                       SharedPreferenceHandler sharedPreferenceHandler = new SharedPreferenceHandler();
-                                       sharedPreferenceHandler.storeName
-                                               (SignUpActivity.this, signUpName.getText().toString());
-                                       sharedPreferenceHandler.storeNumber
-                                               (SignUpActivity.this, (signUpNumber.getText().toString()));
+                                       AppUtils.getInstance().dismissProgressDialog();
+                                       String emailKey = email.replace(".", "");
+                                       Firebase user = myFirebaseRef.child("users").child(emailKey);
+                                       User newUser = new User(signUpName.getText()
+                                               .toString(), signUpNumber.getText().toString());
+                                       user.setValue(newUser);
                                        new AlertDialog.Builder(SignUpActivity.this)
                                                 .setTitle("TREUSBS")
                                                 .setMessage("Sign Up successful")
@@ -109,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private boolean nameAndNumberValidation(){
-        String name = signUpName.getText().toString();
+        String name = signUpName.getText().toString().trim();
         if (name.matches("[a-zA-Z]+") && name.length() > 2){
             String number = signUpNumber.getText().toString();
             return  (number.matches("[0-9]+") && number.length() == 10);

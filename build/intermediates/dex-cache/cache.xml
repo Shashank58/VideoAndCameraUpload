@@ -1,2 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a921664363b8e3a83c48eb752cc00d1f9f93324c">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_801ab2bedfc4017923251b4f0366c5fd5efebc44/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_11f5572c892224a94d6c7553637c0a00d492f379/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.2.2_8ddb8bf2dbdf7064649c2d48012f91d911db56df/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/86b122e640af09b0723e1fa44083c354ba6d9089/glide-3.6.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.6.1_7bbdaf43e9c05f2d5f1563dd35873a0eb81e7187/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.12/6ec0bbd3e161a73ed672284b587fd32309a86d7a/tubesock-0.0.12.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/tubesock-0.0.12_8e7c2ce927dd6e8acae0e3325bcfe403e3b67598/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-databind-2.2.2_43ab0fffec8c199e5be9f12cca3648bc6a1aaf3b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_d8f40f904e9e68183ccf083f8439a6c1e51c70ca/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.5.2/91731b8f5868a3e8a8a773f29b8d06b5c358f5bb/firebase-client-jvm-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="91731b8f5868a3e8a8a773f29b8d06b5c358f5bb">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-jvm-2.5.2_457c55d0a1cc49ab10ddfbfc336a67c70ccc80a5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_e0bc589c098356495917e7368f2251c1f079d098/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_c73967c7b959dbfbb124c3918314a343049dc9ef/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-annotations-2.2.2_ca65881c4d8fdd52892d32ef8db51ea914aaee47/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.5.2/f19f10d6276aa0b380e2d05d2ab3272d693a5433/firebase-client-android-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f19f10d6276aa0b380e2d05d2ab3272d693a5433">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-android-2.5.2_3dbf3b4a4d01d87c40a3ea1246a2320ed0f80954/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="453a7aebb3aadf2ca054825a011bb2e1d726a72d">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9188df68434fa1aca428a0b5bab2a1524e188995/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.github.ybq/Android-SpinKit/1.0.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="876128c14268a173e9f1be29ed9ee637575f7e91">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ybq-Android-SpinKit-1.0.4_0e2e2315c513e160708de574bffd84ff6a9a2bb7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_7646fae7754a3129e5c5341aa92d56fa9f4e2c51/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_eb5ed8e1d8028d59dec121e4d71c9d4335be99bd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_837dfa67f2b994068d4aab35e4213b35a767c39c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_f2d18aed771451d9dd2d709e70d518a4455ac151/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_8758329485d174c4b7ecb9e85d8bdac2ba187e15/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_c732b031eb10aca44ec79b097f88bfc4b769f5a2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_20445f64a1c7a09559e3c8359f60def009eea5c5/classes.dex" />
+    </item>
+
+</items>

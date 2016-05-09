@@ -4,21 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.firebase.client.AuthData;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 
 import shashank.treusbs.R;
-import shashank.treusbs.UploadActivity;
+import shashank.treusbs.User;
 import shashank.treusbs.util.AppUtils;
 import shashank.treusbs.util.SharedPreferenceHandler;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "Sign In Activity";
     private EditText loginEmail, loginPassword;
     private Firebase myFireBaseRef;
 
@@ -43,6 +48,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             newUser.setOnClickListener(this);
         } else {
             startActivity(new Intent(this, UploadActivity.class));
+            finish();
         }
     }
 
@@ -64,20 +70,71 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         if (!"".equals(loginEmail.getText().toString().trim()) &&
                 !"".equals(loginPassword.getText().toString().trim())) {
             if (isValidEmail()) {
-                String email = loginEmail.getText().toString().trim();
+                AppUtils.getInstance().showProgressDialog(SignInActivity.this,
+                        "Logging In...");
+                final String email = loginEmail.getText().toString().trim();
                 String password = loginPassword.getText().toString();
                 myFireBaseRef.authWithPassword(email, password, new Firebase.AuthResultHandler() {
                     @Override
                     public void onAuthenticated(AuthData authData) {
-                        new SharedPreferenceHandler().storeUID
-                                (SignInActivity.this, authData.getUid());
-                        startActivity(new Intent(SignInActivity.this, UploadActivity.class));
+                        AppUtils.getInstance().dismissProgressDialog();
+                        Log.d(TAG, "onAuthenticated: " + authData.toString());
+                        Intent intent = new Intent(SignInActivity.this, UploadActivity.class);
+                        if (authData.getUid().equals("5c9e58c9-f909-44de-b680-975e061661f6")){
+                            intent.putExtra(UploadActivity.IS_ADMIN, true);
+                        } else {
+                            final String emainText = email.replace(".", "");
+                            new SharedPreferenceHandler().storeUID
+                                    (SignInActivity.this, authData.getUid());
+                            Firebase ref = new Firebase("https://treusbs.firebaseio.com/users");
+                            Query query = ref.orderByChild("name");
+                            query.addChildEventListener(new ChildEventListener() {
+                                @Override
+                                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                                    Log.d(TAG, "onChildAdded: " + dataSnapshot.toString());
+                                    if (dataSnapshot.getKey().equals(emainText)) {
+                                        User user = dataSnapshot.getValue(User.class);
+                                        Log.d(TAG, "onChildAdded: Name: " + user.getName());
+                                        Log.d(TAG, "onChildAdded: Number: " + user.getNumber());
+                                        new SharedPreferenceHandler().storeName
+                                                (SignInActivity.this, user.getName());
+                                        new SharedPreferenceHandler().storeNumber
+                                                (SignInActivity.this, user.getNumber());
+                                    }
+                                }
+
+                                @Override
+                                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                                }
+
+                                @Override
+                                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                                }
+
+                                @Override
+                                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                                }
+
+                                @Override
+                                public void onCancelled(FirebaseError firebaseError) {
+
+                                }
+                            });
+
+                            intent.putExtra(UploadActivity.IS_ADMIN, false);
+                        }
+                        startActivity(intent);
                         finish();
                     }
 
                     @Override
                     public void onAuthenticationError(FirebaseError firebaseError) {
-
+                        AppUtils.getInstance().dismissProgressDialog();
+                        AppUtils.getInstance().showAlertDialog(SignInActivity.this,
+                                firebaseError.getMessage());
                     }
                 });
             } else {
