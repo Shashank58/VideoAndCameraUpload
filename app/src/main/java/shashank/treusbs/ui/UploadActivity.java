@@ -17,6 +17,7 @@ import android.provider.MediaStore.Video.Thumbnails;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +27,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 
@@ -36,12 +38,14 @@ import java.util.List;
 
 import shashank.treusbs.NetworkHelper;
 import shashank.treusbs.NetworkHelper.VideoResponse;
+import shashank.treusbs.NetworkHelper.VideoUpload;
 import shashank.treusbs.R;
 import shashank.treusbs.Upload;
 import shashank.treusbs.util.AppUtils;
+import shashank.treusbs.util.SharedPreferenceHandler;
 
 public class UploadActivity extends AppCompatActivity implements View.OnClickListener,
-        VideoResponse{
+        VideoResponse, VideoUpload{
     private static final String TAG = "Upload Activity";
     private FloatingActionButton uploadVideoFab;
     private static final int REQUEST_VIDEO_CAPTURE = 1;
@@ -57,6 +61,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private String realPathVideo;
     private VideosAdapter videosAdapter;
     private Bitmap bitmap;
+    private ProgressBar progressBar;
+    private View tint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +97,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
         playImage = (ImageView) findViewById(R.id.play_image);
         uploadOffence = (Button) findViewById(R.id.upload_offence);
         deleteVideo = (ImageView) findViewById(R.id.delete_video);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        tint = findViewById(R.id.tint);
     }
 
     private void checkPermissions() {
@@ -159,8 +167,11 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.upload_offence:
                 if (realPathVideo != null && licencePlate.getText().length() > 6) {
+                    uploadOffence.setVisibility(View.GONE);
+                    uploadVideoFab.setVisibility(View.GONE);
                     new NetworkHelper().uploadVideo(UploadActivity.this, new File(realPathVideo)
-                            , new File(saveBitmap(bitmap)),licencePlate.getText().toString());
+                            , new File(saveBitmap(bitmap)), licencePlate.getText()
+                                    .toString(), this, progressBar, tint);
                 } else {
                     AppUtils.getInstance().showAlertDialog(UploadActivity.this,
                             "Please enter proper licence plate number of the vehicle");
@@ -173,6 +184,27 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.app_name))
+                .setMessage("Are you sure you want to log out")
+                .setPositiveButton(android.R.string.yes, new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        new SharedPreferenceHandler().deleteAllData(UploadActivity.this);
+                        startActivity(new Intent(UploadActivity.this, SignInActivity.class));
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).create().show();
     }
 
     @Override
@@ -268,5 +300,26 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     public void allVideosReceived(List<Upload> allVideos) {
         videosAdapter = new VideosAdapter(this, allVideos);
         listOfVideos.setAdapter(videosAdapter);
+    }
+
+    @Override
+    public void uploadResponse(boolean isVideoUploaded) {
+        uploadOffence.setVisibility(View.VISIBLE);
+        uploadVideoFab.setVisibility(View.VISIBLE);
+        if (isVideoUploaded) {
+            capturedVideo.setImageResource(0);
+            contentUri = null;
+            capturedVideo.setClickable(false);
+            playImage.setVisibility(View.GONE);
+
+            uploadOffence.setAlpha(0.4f);
+            uploadOffence.setClickable(false);
+
+            deleteVideo.setVisibility(View.GONE);
+
+            realPathVideo = null;
+
+            licencePlate.setText("");
+        }
     }
 }

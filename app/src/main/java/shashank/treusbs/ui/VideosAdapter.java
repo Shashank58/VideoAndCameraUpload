@@ -1,7 +1,9 @@
 package shashank.treusbs.ui;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import shashank.treusbs.NetworkHelper;
 import shashank.treusbs.R;
 import shashank.treusbs.Upload;
 
@@ -42,11 +45,13 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
     }
 
     @Override
-    public void onBindViewHolder(VideosViewHolder holder, int position) {
+    public void onBindViewHolder(VideosViewHolder holder, final int position) {
         final Upload upload = uploadList.get(position);
 
         holder.nameOfUploader.setText(upload.getUploaderName());
         holder.licenceNumber.setText(upload.getRegistrationNumber());
+        holder.timeStamp.setText(upload.getDate());
+
         Glide.with(activity).load(upload.getThumbnail())
                 .asBitmap().into(holder.videoThumbnail);
 
@@ -56,6 +61,29 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
                 Intent intent = new Intent(activity, PlayVideoActivity.class);
                 intent.putExtra("Video id", upload.getVideoId());
                 activity.startActivity(intent);
+            }
+        });
+
+        holder.deleteVideo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(activity)
+                        .setTitle(activity.getString(R.string.app_name))
+                        .setMessage("Are you sure you want to delete the video")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                new NetworkHelper().deleteVideo(upload.getVideoId());
+                                uploadList.remove(position);
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        }).create().show();
             }
         });
     }
@@ -71,6 +99,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
         protected TextView timeStamp;
         protected TextView licenceNumber;
         protected CardView videoCard;
+        protected ImageView deleteVideo;
 
         public VideosViewHolder(View itemView) {
             super(itemView);
@@ -80,6 +109,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideosView
             timeStamp = (TextView) itemView.findViewById(R.id.time_stamp);
             licenceNumber = (TextView) itemView.findViewById(R.id.licence_number);
             videoCard = (CardView) itemView.findViewById(R.id.individual_card);
+            deleteVideo = (ImageView) itemView.findViewById(R.id.delete_video);
         }
     }
 }

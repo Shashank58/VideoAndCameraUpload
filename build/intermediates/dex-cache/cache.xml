@@ -5,7 +5,7 @@
         jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="a921664363b8e3a83c48eb752cc00d1f9f93324c">
+        sha1="35ed320ea111fc2f317a6f52d184c5f2b2ae432d">
         <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_801ab2bedfc4017923251b4f0366c5fd5efebc44/classes.dex" />
     </item>
     <item
@@ -89,7 +89,7 @@
         jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="453a7aebb3aadf2ca054825a011bb2e1d726a72d">
+        sha1="94955467e9bdae8c6993b6c28ede34f01c31a819">
         <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9188df68434fa1aca428a0b5bab2a1524e188995/classes.dex" />
     </item>
     <item
@@ -100,18 +100,18 @@
         <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ybq-Android-SpinKit-1.0.4_0e2e2315c513e160708de574bffd84ff6a9a2bb7/classes.dex" />
     </item>
     <item
-        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
-        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_7646fae7754a3129e5c5341aa92d56fa9f4e2c51/classes.dex" />
-    </item>
-    <item
         jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
         <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_eb5ed8e1d8028d59dec121e4d71c9d4335be99bd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_7646fae7754a3129e5c5341aa92d56fa9f4e2c51/classes.dex" />
     </item>
     <item
         jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"

@@ -1,11 +1,17 @@
 package shashank.treusbs;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * Created by shashankm on 30/04/16.
  */
 public class Upload {
+    private static final String TAG = "Upload";
     private String videoPath;
-    private String timeStamp;
+    private String date;
     private String uploaderName;
     private String registrationNumber;
     private int videoId;
@@ -19,12 +25,26 @@ public class Upload {
         this.videoPath = ("http://androidvideo.herokuapp.com" + videoPath).replace("\\", "");
     }
 
-    public String getTimeStamp() {
-        return timeStamp;
+    public String getDate() {
+        return date;
     }
 
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setDate(String date) {
+        String[] completeDate = date.split("T");
+
+        String[] utcTime = completeDate[1].split("\\.");
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        try {
+            Date myDate = simpleDateFormat.parse(completeDate[0] + " " + utcTime[0]);
+//            simpleDateFormat.setTimeZone(TimeZone.getDefault());
+//            this.date = simpleDateFormat.format(myDate);
+            String[] fullDate = myDate.toString().split("GMT");
+            this.date = fullDate[0];
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getUploaderName() {

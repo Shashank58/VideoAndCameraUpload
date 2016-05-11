@@ -2,6 +2,8 @@ package shashank.treusbs;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -35,10 +37,17 @@ public class NetworkHelper {
         void videoFetched(String videoPath);
     }
 
+    public interface VideoUpload {
+        void uploadResponse(boolean isVideoUploaded);
+    }
+
     public void uploadVideo(final Activity activity, File videoFile, File thumbnail,
-                            String description) {
-        if (activity != null)
-            AppUtils.getInstance().showProgressDialog(activity, "Uploading...");
+          String description, final VideoUpload videoUpload, final ProgressBar progressBar,
+                            final View tint) {
+        tint.setVisibility(View.VISIBLE);
+        tint.setClickable(true);
+        progressBar.setVisibility(View.VISIBLE);
+
         String name = new SharedPreferenceHandler().getUserName(activity);
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -54,24 +63,44 @@ public class NetworkHelper {
         client.post(Constants.CREATE_VIDEO_URL, params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                AppUtils.getInstance().dismissProgressDialog();
+                tint.setVisibility(View.GONE);
+                tint.setClickable(false);
+                progressBar.setVisibility(View.GONE);
                 if (activity != null)
                     AppUtils.getInstance().showAlertDialog(activity, "Video uploaded successfully");
                 Log.d(TAG, "onSuccess: Response is - " + response.toString());
+                try {
+                    videoUpload.uploadResponse(response.getBoolean("status"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onProgress(long bytesWritten, long totalSize) {
+                long progressPercentage = (long)100 * bytesWritten/totalSize;
+                progressBar.setProgress((int) progressPercentage);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                AppUtils.getInstance().dismissProgressDialog();
+                tint.setVisibility(View.GONE);
+                tint.setClickable(false);
+                progressBar.setVisibility(View.GONE);
                 if (activity != null)
                     AppUtils.getInstance().showAlertDialog(activity, "Network error");
+
+                videoUpload.uploadResponse(false);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                AppUtils.getInstance().dismissProgressDialog();
+                tint.setVisibility(View.GONE);
+                tint.setClickable(false);
+                progressBar.setVisibility(View.GONE);
                 if (activity != null)
                     AppUtils.getInstance().showAlertDialog(activity, "Network error");
+                videoUpload.uploadResponse(false);
             }
         });
     }
@@ -91,15 +120,34 @@ public class NetworkHelper {
                         JSONArray data = response.getJSONArray("data");
                         List<Upload> allVideos = new ArrayList<>();
                         for (int i = 0; i < data.length(); i++) {
+                            boolean isDuplicate = false;
                             Upload upload = new Upload();
                             JSONObject video = data.getJSONObject(i);
                             upload.setVideoId(video.getInt("id"));
                             upload.setUploaderName(video.getString("name"));
                             upload.setVideoPath(video.getString("video"));
                             upload.setRegistrationNumber(video.getString("description"));
-                            upload.setTimeStamp(video.getString("created_at"));
+                            upload.setDate(video.getString("created_at"));
+                            Log.d(TAG, "onSuccess: Time - " + upload.getDate());
                             upload.setThumbnail(video.getString("thumbnail"));
-                            allVideos.add(upload);
+
+                            for (Upload allVideo : allVideos) {
+                                String currentVideo = upload.getDate().trim().substring(0,
+                                        upload.getDate().indexOf(":"));
+                                String existingVideo = allVideo.getDate().trim().substring(0,
+                                        allVideo.getDate().indexOf(":"));
+                                Log.d(TAG, "onSuccess: Current video - " + currentVideo);
+                                Log.d(TAG, "onSuccess: Existing video - " + existingVideo);
+                                if (currentVideo.trim().equalsIgnoreCase(existingVideo.trim())
+                                        && allVideo.getRegistrationNumber().equalsIgnoreCase
+                                        (upload.getRegistrationNumber())) {
+                                    Log.d(TAG, "onSuccess: FAKE!");
+                                    isDuplicate = true;
+                                    break;
+                                }
+                            }
+                            if (!isDuplicate)
+                                allVideos.add(upload);
                         }
                         videoResponse.allVideosReceived(allVideos);
                     } catch (JSONException e) {
@@ -149,6 +197,28 @@ public class NetworkHelper {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 if (activity != null)
                     AppUtils.getInstance().showAlertDialog(activity, "Network error");
+            }
+        });
+    }
+
+    public void deleteVideo(int id) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("id", id);
+        client.delete(Constants.GET_INDIVIDUAL_VIDEO_URL, params, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                Log.d(TAG, "onSuccess: Delete - " + response.toString());
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+
             }
         });
     }

@@ -1,5 +1,6 @@
 package shashank.treusbs.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -51,8 +52,15 @@ public class SharedPreferenceHandler {
         editor.apply();
     }
 
+
+
     public String getUserNumber(Context context) {
         SharedPreferences pref = context.getSharedPreferences(USER_KEY, PRIVATE_MODE);
         return pref.getString(USER_NUMBER, null);
+    }
+
+    public void deleteAllData(Activity activity) {
+        SharedPreferences pref = activity.getSharedPreferences(USER_KEY, PRIVATE_MODE);
+        pref.edit().clear().commit();
     }
 }
