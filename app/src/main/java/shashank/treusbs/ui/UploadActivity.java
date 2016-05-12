@@ -118,6 +118,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             } else {
                 captureVideo();
             }
+        } else {
+            captureVideo();
         }
     }
 
