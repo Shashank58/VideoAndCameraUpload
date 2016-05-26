@@ -83,7 +83,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         if (authData.getUid().equals("5c9e58c9-f909-44de-b680-975e061661f6")){
                             intent.putExtra(UploadActivity.IS_ADMIN, true);
                         } else {
-                            final String emainText = email.replace(".", "");
+                            final String emailText = email.replace(".", "");
                             new SharedPreferenceHandler().storeUID
                                     (SignInActivity.this, authData.getUid());
                             Firebase ref = new Firebase("https://treusbs.firebaseio.com/users");
@@ -92,7 +92,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                 @Override
                                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                                     Log.d(TAG, "onChildAdded: " + dataSnapshot.toString());
-                                    if (dataSnapshot.getKey().equals(emainText)) {
+                                    if (dataSnapshot.getKey().equals(emailText)) {
                                         User user = dataSnapshot.getValue(User.class);
                                         Log.d(TAG, "onChildAdded: Name: " + user.getName());
                                         Log.d(TAG, "onChildAdded: Number: " + user.getNumber());

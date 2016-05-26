@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "458404270803",
+    "firebase_url": "https://treusbs.firebaseio.com",
+    "project_id": "treusbs",
+    "storage_bucket": "treusbs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458404270803:android:4e3d69df1e36543c",
+        "android_client_info": {
+          "package_name": "shashank.treusbs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458404270803-9qt2dkpm7qo2e6makd14hqekuq42c9ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkgeXmOunqoPmHg1a7hLLkgW5gbRfL6v8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

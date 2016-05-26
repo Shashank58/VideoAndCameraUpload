@@ -89,10 +89,9 @@
         />
 
     <ProgressBar
-        style="@android:style/Widget.ProgressBar.Horizontal"
         android:id="@+id/progressBar"
-        android:layout_width="300dp"
-        android:layout_height="20dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_centerInParent="true"
         android:visibility="gone"
         />

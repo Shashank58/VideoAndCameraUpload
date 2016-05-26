@@ -6,14 +6,16 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Video.Thumbnails;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -22,7 +24,6 @@ import android.support.v7.app.AlertDialog.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,10 +31,15 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
+import com.firebase.client.Firebase;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationServices;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import shashank.treusbs.NetworkHelper;
@@ -45,12 +51,13 @@ import shashank.treusbs.util.AppUtils;
 import shashank.treusbs.util.SharedPreferenceHandler;
 
 public class UploadActivity extends AppCompatActivity implements View.OnClickListener,
-        VideoResponse, VideoUpload{
+        VideoResponse, VideoUpload, ConnectionCallbacks, OnConnectionFailedListener {
     private static final String TAG = "Upload Activity";
     private FloatingActionButton uploadVideoFab;
     private static final int REQUEST_VIDEO_CAPTURE = 1;
     private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 3;
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 4;
+    private static final int MY_PERMISSIONS_REQUEST_LOCATION = 10;
     public static final String IS_ADMIN = "Is admin";
     private EditText licencePlate;
     private ImageView capturedVideo;
@@ -63,15 +70,28 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private Bitmap bitmap;
     private ProgressBar progressBar;
     private View tint;
+    private Firebase myFireBaseRef;
+    private Location mLastLocation;
+    private GoogleApiClient mGoogleApiClient;
+    private boolean isAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        boolean isAdmin = getIntent().getBooleanExtra(IS_ADMIN, false);
+
+        Firebase.setAndroidContext(this);
+        myFireBaseRef = new Firebase("https://treusbs.firebaseio.com/");
+        isAdmin = getIntent().getBooleanExtra(IS_ADMIN, false);
         if (!isAdmin) {
             setContentView(R.layout.activity_upload);
 
             fetchViews();
+
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
 
             uploadVideoFab.setOnClickListener(this);
             capturedVideo.setOnClickListener(this);
@@ -86,6 +106,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             listOfVideos = (RecyclerView) findViewById(R.id.list_of_video);
             listOfVideos.setLayoutManager(new LinearLayoutManager(this));
             listOfVideos.setHasFixedSize(true);
+
             new NetworkHelper().getAllVideos(this, this);
         }
     }
@@ -145,6 +166,16 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
                             getString(R.string.need_write_permissions));
                 }
                 break;
+
+            case MY_PERMISSIONS_REQUEST_LOCATION:
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    checkForPermissionAndSetLocation();
+                } else {
+                    AppUtils.getInstance().showAlertDialog(UploadActivity.this,
+                            "Need location permissions");
+                }
+                break;
         }
     }
 
@@ -169,11 +200,22 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.upload_offence:
                 if (realPathVideo != null && licencePlate.getText().length() > 6) {
-                    uploadOffence.setVisibility(View.GONE);
-                    uploadVideoFab.setVisibility(View.GONE);
-                    new NetworkHelper().uploadVideo(UploadActivity.this, new File(realPathVideo)
-                            , new File(saveBitmap(bitmap)), licencePlate.getText()
-                                    .toString(), this, progressBar, tint);
+                    if (mLastLocation == null) {
+                        new AlertDialog.Builder(this)
+                                .setTitle("TREUSBS")
+                                .setMessage("Please enable location services before uploading offence")
+                                .setPositiveButton(android.R.string.yes, new OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        checkForPermissionAndSetLocation();
+                                    }
+                                }).create().show();
+                    } else {
+                        uploadOffence.setVisibility(View.GONE);
+                        uploadVideoFab.setVisibility(View.GONE);
+                        new NetworkHelper().uploadVideo(UploadActivity.this, contentUri
+                                , this, progressBar, tint);
+                    }
                 } else {
                     AppUtils.getInstance().showAlertDialog(UploadActivity.this,
                             "Please enter proper licence plate number of the vehicle");
@@ -237,38 +279,6 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private String saveBitmap(Bitmap croppedImage) {
-        Uri saveUri = null;
-
-        String path = Environment.getExternalStorageDirectory().getPath()
-                + "/Treusbs/image_thumbnail.jpg";
-        File file = new File(path);
-        OutputStream outputStream = null;
-        try {
-            if (file.exists()) {
-                if (!file.delete()) {
-                    Log.d(TAG, "saveBitmap: Delete failed");
-                }
-            }
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-            saveUri = Uri.fromFile(file);
-            outputStream = getContentResolver().openOutputStream(saveUri);
-            if (outputStream != null) {
-                croppedImage.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-            }
-        } catch (IOException e) {
-            // log the error
-        }
-        String realPathThumbnail;
-        if (VERSION.SDK_INT >= 19)
-            realPathThumbnail = AppUtils.getAbsolutePathPostKitkat(this, saveUri);
-        else
-            realPathThumbnail = AppUtils.getAbsolutePathPreKitKat(this, saveUri);
-
-        return realPathThumbnail;
-    }
-
     private void deleteCapturedVideo() {
         new Builder(this)
                         .setTitle("TREUSBS")
@@ -298,30 +308,98 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
                         }).create().show();
     }
 
-    @Override
-    public void allVideosReceived(List<Upload> allVideos) {
-        videosAdapter = new VideosAdapter(this, allVideos);
-        listOfVideos.setAdapter(videosAdapter);
+    protected void onStart() {
+        super.onStart();
+        if (!isAdmin)
+            mGoogleApiClient.connect();
+    }
+
+    protected void onStop() {
+        super.onStop();
+        if (!isAdmin)
+            mGoogleApiClient.disconnect();
     }
 
     @Override
-    public void uploadResponse(boolean isVideoUploaded) {
+    public void allVideosReceived(List<Upload> allVideos) {
+        if (allVideos != null) {
+            videosAdapter = new VideosAdapter(this, allVideos, myFireBaseRef);
+            listOfVideos.setAdapter(videosAdapter);
+        }
+    }
+
+    @Override
+    public void uploadResponse(boolean isVideoUploaded, String url) {
         uploadOffence.setVisibility(View.VISIBLE);
         uploadVideoFab.setVisibility(View.VISIBLE);
         if (isVideoUploaded) {
-            capturedVideo.setImageResource(0);
-            contentUri = null;
-            capturedVideo.setClickable(false);
-            playImage.setVisibility(View.GONE);
-
-            uploadOffence.setAlpha(0.4f);
-            uploadOffence.setClickable(false);
-
-            deleteVideo.setVisibility(View.GONE);
-
-            realPathVideo = null;
-
-            licencePlate.setText("");
+            if (mLastLocation == null) {
+                new AlertDialog.Builder(this)
+                        .setTitle("TREUSBS")
+                        .setMessage("Please enable location services before uploading offence")
+                        .setPositiveButton(android.R.string.yes, new OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                checkForPermissionAndSetLocation();
+                            }
+                        }).create().show();
+            } else {
+                storeOffenceInfo(url);
+            }
         }
+    }
+
+    private void storeOffenceInfo(String url) {
+        String name = new SharedPreferenceHandler().getUserName(this);
+        Firebase videos = myFireBaseRef.child("videos").child(contentUri.getLastPathSegment());
+
+        Calendar cal = Calendar.getInstance();
+
+        String time= new SimpleDateFormat("dd MMM yyyy hh:mm a").format(cal.getTime());
+        Upload upload = new Upload(url, time, name , licencePlate.getText().toString().trim(),
+                mLastLocation.getLatitude(), mLastLocation.getLongitude());
+        videos.setValue(upload);
+
+        capturedVideo.setImageResource(0);
+        contentUri = null;
+        capturedVideo.setClickable(false);
+        playImage.setVisibility(View.GONE);
+
+        uploadOffence.setAlpha(0.4f);
+        uploadOffence.setClickable(false);
+
+        deleteVideo.setVisibility(View.GONE);
+
+        realPathVideo = null;
+
+        licencePlate.setText("");
+    }
+
+    private void checkForPermissionAndSetLocation() {
+        if (ActivityCompat.checkSelfPermission(this, permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (this, permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_LOCATION);
+        } else {
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+        }
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        checkForPermissionAndSetLocation();
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }
