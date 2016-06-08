@@ -1,2 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="91df18bca1100c05181d6b5ac67f546464c95009">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_801ab2bedfc4017923251b4f0366c5fd5efebc44/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-23.0.0_3fb8fcb8c7cfac63c3664b3d84c8e784c465ebb9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2f7bd8cc7519d5231aa8d2ae8e905d3f602bd491">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.0.0_84c82bbca63f2d50b93c3c77e05a0a17e519541e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f4e85eafa876cd7d7641244867dac3f88d71e866">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.0.0_137d95c286bb94c5f19e8163eb599fe993f328c1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="24536a7b97926a9c155c88425da6875adeb11b51">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.0.0_6c96cc190e9fa87614f3855b3eb7b33cbbd1c57f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ef5c5c2afbd174d55cf1cfcac7d0346cbc4c1322">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.0.0_a694714164d9bafcb55c9f7aa2f6b1dabb054912/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="294d49a66cc1238d9f7fd352136a45622fa98c0f">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.0.0_7e43ecbffd083ac55f9dcd32afdb6129521ee154/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/86b122e640af09b0723e1fa44083c354ba6d9089/glide-3.6.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.6.1_7bbdaf43e9c05f2d5f1563dd35873a0eb81e7187/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.12/6ec0bbd3e161a73ed672284b587fd32309a86d7a/tubesock-0.0.12.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/tubesock-0.0.12_8e7c2ce927dd6e8acae0e3325bcfe403e3b67598/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.0_fbabe35c043b98790b2799fc82a402737c5aaf1f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_d8f40f904e9e68183ccf083f8439a6c1e51c70ca/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.5.2/91731b8f5868a3e8a8a773f29b8d06b5c358f5bb/firebase-client-jvm-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="91731b8f5868a3e8a8a773f29b8d06b5c358f5bb">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-jvm-2.5.2_457c55d0a1cc49ab10ddfbfc336a67c70ccc80a5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.0_1db4c113963237dcb147493400f4a92811844fed/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b8bedab61b3b5238cd9a07d3b04449d7fecdbc3b">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.0.0_f746e95731b0b8e41d889fa35b53edafe4eda3e9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7a23185c9b1c100e7d1a32275017e4712e31c796">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.0.0_2a16fe0b843450503ca6c7aec55ab9095864527c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2c5bc0ebbe69c9fab587c2216b36ec44ab8f0704">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.0.0_e1080b13f0426ef9b1a4a76f3dadaebd75bf7673/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-annotations-2.2.2_ca65881c4d8fdd52892d32ef8db51ea914aaee47/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7da84426d876216ed4cdddd85e739be5ecabdd04">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.0.0_a27a4e7fef12e5cf8a895c35010247b68fe2ea90/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="79e4b41db41d4dbbf364c7bd6aaeee5b876c9d8b">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.0.0_6bc5d43cdaccdd61b61c43e9f51e2a3af48d596e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="005786793d72c6deacbbbfd38177ed58e1aa6653">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.0.0_d4741ddaf2ef5671202d0a89de2c3944f729c43d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.0_14f746e82dfabe959994254837f57ccba5cc3527/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.0_4689411532b50b14e419660433def3b0456f35e1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="69472e334350cafbf442776da05c9a04955252fb">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.0.0_5ab453345cfbde31d4f16b7cb9b02113a11d4771/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_7646fae7754a3129e5c5341aa92d56fa9f4e2c51/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_837dfa67f2b994068d4aab35e4213b35a767c39c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="817b9101192f2fd6dc0fd8cd522d8f4a1a75fcdc">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.0.0_f1ef1608e0c2c7d68483737d0d7b16f02cc45753/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d96f9f3ef66494d1231304cafd28c962dda80dea">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.0.0_fde5db9596c3ccf10be686486c02372cd873af85/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.0.0_9b590d32cf0c67bd6c093fe2945e076064d16a20/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ebfde1a055aea400df77584a68aa60609f618bed">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.0.0_8e6e11d0e825027919a1691a5a5d44aea18aac7d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ed16ff19f0a9515604a0f08104ca0317b82e29e3">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.0.0_076b2b664fda3f7974445fa6d266eed85d85fa6f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7e467a973b749c6390a5991c9a8edbde96fc10c9">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.0.0_3c42f2a47ca06ac7fa409d17ef8cb25fbf5c3972/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67a7d712de3e7d025f4efdcec1da183f764bdbab">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.0.0_17514ca5ca3715a39c60261e67bfad28682dc4b0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="184428c29b2a4b220cd44284d515db5d8cb5fc76">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.0.0_5caf4ca2945f779074f7fd3f75a6cdcd1d93f28b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_cedfbc1e19df6aa685c23e07a59e06c4f3b9540f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e595f98f8c525201dccd119f43ad1ddacd4c48d6">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.0.0_641937445250f56fdb14749ab38e03bd164e6d9a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_20445f64a1c7a09559e3c8359f60def009eea5c5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.0.0_9cc606bc638616901bf53e8fdce72cadc19ea4fc/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5289e799a43a64c4137d109bf992e10a2f952aa3">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.0.0_8bfcb0b647b837d317f59a1e4280c95608b379b5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_11f5572c892224a94d6c7553637c0a00d492f379/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.2.2_8ddb8bf2dbdf7064649c2d48012f91d911db56df/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="59cca9b91688dc2467754d36793b3d23bebd21a9">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.0.0_e3fff3aac891476550fa94520c2bbd76ddcfa200/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4431efe5d0f67fab36a698dde725946b33a6bf4a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.0.0_0bc89b7df8423be72ed1af8aa487988d9057e100/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d7002ed92a3c46c6a89a786877ecf7978a4f0459">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.0.0_55691e681f67eae73358946f2e00d49237971400/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="32a5a566ae197603d0bed3e6d1d275f6a771564e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.0.0_698a3a91acb2d169d69b79abb3f09bfa18f949ef/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-databind-2.2.2_43ab0fffec8c199e5be9f12cca3648bc6a1aaf3b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.0_f18375c966973f01b0c94e83872ffce08dc3e147/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8126914f5bc372a33e27ea90f02412c32468ce8a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.0.0_9dda0dc9d20d2d61f4d2fb8fcc0140fbf1aa3fb0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_e0bc589c098356495917e7368f2251c1f079d098/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0facc6fc326f2406f4bb9b02f442994c5ce6a403">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.0.0_27a415d4b88f4d270bbeff78be5daab0779cf509/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_c73967c7b959dbfbb124c3918314a343049dc9ef/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.5.2/f19f10d6276aa0b380e2d05d2ab3272d693a5433/firebase-client-android-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f19f10d6276aa0b380e2d05d2ab3272d693a5433">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/firebase-client-android-2.5.2_3dbf3b4a4d01d87c40a3ea1246a2320ed0f80954/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="022de7a8d579a15530129f4be5916ef4264527c1">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9188df68434fa1aca428a0b5bab2a1524e188995/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="373cd65725af2781d100ddc193c7d3f14464a774">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.0.0_0957e076936bb9ba9447e35b3ddf8fbcb2b5765a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.github.ybq/Android-SpinKit/1.0.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="876128c14268a173e9f1be29ed9ee637575f7e91">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ybq-Android-SpinKit-1.0.4_0e2e2315c513e160708de574bffd84ff6a9a2bb7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2cb29455028e92e024bbad0d41c6ec772f2433d1">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.0.0_4e43a67f7677e62b8195d5f3c66d4fc4d0c094cb/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_eb5ed8e1d8028d59dec121e4d71c9d4335be99bd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="70ddab48594608953b20164b82f1f890a9a8174a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.0.0_4d32cca5c4a3060e299a425fc32505d1d4666e8e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4caf75b2cfb7ec6e80a57d0ee64fc102ad3578b8">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.0.0_370fc638f6da1285d348826da746505422e3458e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c11cf7a7a6e5adf8fa564303a11dbc351fc11b7c">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.0.0_15bc62f0df8a42ae00c347f9c094c14eca8ef785/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5f0f6913a208a126269aaa68004ed0329a832c5b">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.0.0_363623810b9d06e5b97c848ff122ed2f0157cac4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_f2d18aed771451d9dd2d709e70d518a4455ac151/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="379d1834afa3c08f43be23a23b103053537b65b5">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.0.0_1c181ea061516261376945c13665432eea18d3e5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_c732b031eb10aca44ec79b097f88bfc4b769f5a2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_8758329485d174c4b7ecb9e85d8bdac2ba187e15/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a819aae4f0c711e50b4fd633922a3c1a176cb51e">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.0.0_138c22cd16c0e9e611376f8387bbf033bd88aaec/classes.dex" />
+    </item>
+    <item
+        jar="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="733964f04c339e425439545b1d172c23b53f8c13">
+        <dex dex="/Users/shashankm/Cybrilla/TREUSBS/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.0.0_2d50fd01c69d347c55a9a5df66da2754dbdfb87c/classes.dex" />
+    </item>
+
+</items>

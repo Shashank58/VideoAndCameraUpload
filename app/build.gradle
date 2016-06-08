@@ -19,6 +19,14 @@ android {
         }
     }
 
+    dexOptions {
+        jumboMode = true
+
+        // Avoid the OutOfMemoryError: GC overhead limit exceeded:
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE-FIREBASE.txt'

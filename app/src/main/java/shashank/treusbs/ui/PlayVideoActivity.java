@@ -10,10 +10,9 @@ import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.VideoView;
 
-import shashank.treusbs.NetworkHelper.PlayVideo;
 import shashank.treusbs.R;
 
-public class PlayVideoActivity extends AppCompatActivity implements PlayVideo{
+public class PlayVideoActivity extends AppCompatActivity {
     private static final String TAG = "Play Video Activity";
     private VideoView videoView;
     private ProgressBar videoLoadingLoader;
@@ -27,9 +26,6 @@ public class PlayVideoActivity extends AppCompatActivity implements PlayVideo{
         videoLoadingLoader = (ProgressBar) findViewById(R.id.video_loading_loader);
 
         videoLoadingLoader.setVisibility(View.VISIBLE);
-//        int id = getIntent().getIntExtra("Video id", -1);
-//        if (id != -1)
-//            new NetworkHelper().getIndividualVideo(this, id, this);
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
@@ -42,21 +38,6 @@ public class PlayVideoActivity extends AppCompatActivity implements PlayVideo{
                 videoLoadingLoader.setVisibility(View.GONE);
                 videoView.start();
                 videoView.requestFocus();
-            }
-        });
-    }
-
-    @Override
-    public void videoFetched(String videoPath) {
-
-
-        videoView.setVideoURI(Uri.parse(("http://androidvideo.herokuapp.com"
-                + videoPath).replace("\\", "")));
-
-        videoView.setOnPreparedListener(new OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-
             }
         });
     }
